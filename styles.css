@@ -107,7 +107,7 @@ main ul li ul li {
     background-color: transparent;
     border: none;
     padding: 0.5rem 0;
-    margin-bottom: 0;
+    margin-bottom: 8px;
 }
 
 main ul li ul li p:last-of-type {
