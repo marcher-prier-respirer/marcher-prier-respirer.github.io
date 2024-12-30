@@ -2,17 +2,20 @@ let lastScrollPosition = 0;
 const nav = document.querySelector('nav');
 const header = document.querySelector('header');
 
+// Get the height of the header
+const headerHeight = header.offsetHeight;
+
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > header.offsetHeight) {
+    if (currentScrollPosition > headerHeight) {
         // Scroll past the header: make the menu stick to the top & hide it
         nav.style.position = 'fixed';
         nav.style.top = '-50px'; // Keeps a small visible edge
     } else {
-        // Scroll within the header: keep the menu below the header
+        // Scroll within the header: position the nav menu below the header
         // nav.style.position = 'relative';
-        nav.style.top = `${header.offsetHeight-currentScrollPosition}px`; // Adjust dynamically to header height
+        nav.style.top = `${headerHeight}px`; // Adjust dynamically to header height
     }
 
     lastScrollPosition = currentScrollPosition;
