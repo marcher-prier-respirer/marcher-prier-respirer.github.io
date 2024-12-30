@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
 
     if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
         // Scrolling down - hide the menu
-        nav.style.top = '-45px'; // Keeps a small visible edge
+        nav.style.top = '-55px'; // Keeps a small visible edge
     } else {
         // Scrolling up - show the menu
         nav.style.top = '0';
