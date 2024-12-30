@@ -107,6 +107,12 @@ main ul li ul li {
     background-color: transparent;
     border: none;
     padding: 0.5rem 0;
+    margin-bottom: 0;
+}
+
+main ul li ul li p:last-of-type {
+    margin-bottom: 0;
+    
 }
 
 .event-title {
