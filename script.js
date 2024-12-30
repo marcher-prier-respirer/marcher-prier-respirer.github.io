@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
     } else {
         // Scroll within the header: keep the menu below the header
         // nav.style.position = 'relative';
-        nav.style.top = `${header.offsetHeight}px`; // Adjust dynamically to header height
+        nav.style.top = `${header.offsetHeight-currentScrollPosition}px`; // Adjust dynamically to header height
     }
 
     lastScrollPosition = currentScrollPosition;
