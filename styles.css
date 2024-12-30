@@ -1,65 +1,111 @@
+/* Reset and Base Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
 }
+
+/* Header */
 header {
     background-image: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
-    padding: 2rem 0;
     text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 header h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
+
 header p {
     font-size: 1.2rem;
 }
+
+/* Navigation */
 nav {
-    text-align: center;
     background-color: #4CAF50;
-    padding: 0.5rem 0;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 nav a {
+    color: white;
     margin: 0 1rem;
     text-decoration: none;
-    color: white;
+    font-size: 1rem;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
+
 nav a:hover {
-    text-decoration: underline;
+    color: #e0e0e0;
 }
+
+/* Main Content */
 main {
     padding: 2rem;
-    text-align: center;
 }
-main section {
-    margin-bottom: 2rem;
-}
+
 main h2 {
     color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
+
+main section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 main ul {
     list-style: none;
     padding: 0;
 }
+
 main ul li {
-    background: white;
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
     padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4;
+    border-left: 4px solid #4CAF50;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
+
+main ul li:hover {
+    background-color: #e8f5e9;
+}
+
+main ul li ul {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+main ul li ul li {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 0;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
+    font-size: 0.9rem;
 }
+
 footer p {
     margin: 0;
 }
