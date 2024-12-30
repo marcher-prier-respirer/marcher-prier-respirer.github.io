@@ -14,7 +14,7 @@ window.addEventListener('scroll', () => {
     } else {
         // Scroll past the header: make the menu stick to the top & hide it
         nav.style.position = 'fixed';
-        nav.style.top = '-50px'; // Keeps a small visible edge
+        nav.style.top = '-10px'; // Keeps a small visible edge
     }
 });
 
