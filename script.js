@@ -1,4 +1,3 @@
-let lastScrollPosition = 0;
 const nav = document.querySelector('nav');
 const header = document.querySelector('header');
 
@@ -8,17 +7,15 @@ const headerHeight = header.offsetHeight;
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > headerHeight) {
-        // Scroll past the header: make the menu stick to the top & hide it
-        nav.style.position = 'fixed';
-        nav.style.top = '-50px'; // Keeps a small visible edge
-    } else if (currentScrollPosition <= headerHeight) {
+    if (currentScrollPosition <= headerHeight) {
         // Scroll within the header: position the nav menu below the header
         nav.style.position = 'absolute';
         nav.style.top = `${Math.Max(headerHeight-currentScrollPosition, 0)}px`; // Adjust dynamically to header height
+    } else {
+        // Scroll past the header: make the menu stick to the top & hide it
+        nav.style.position = 'fixed';
+        nav.style.top = '-50px'; // Keeps a small visible edge
     }
-
-    lastScrollPosition = currentScrollPosition;
 });
 
 
