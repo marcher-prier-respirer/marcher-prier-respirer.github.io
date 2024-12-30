@@ -10,13 +10,11 @@ window.addEventListener('scroll', () => {
     if (currentScrollPosition <= headerHeight) {
         // Scroll within the header: position the nav menu below the header
         nav.style.position = 'absolute';
-        nav.style.top = `${Math.Max(headerHeight-currentScrollPosition, 0)}px`; // Adjust dynamically to header height
+        nav.style.top = `${headerHeight - currentScrollPosition}px`; // Adjust dynamically to header height
     } else {
         // Scroll past the header: make the menu stick to the top & hide it
-        if (nav.style.position !== 'fixed') {
-            nav.style.position = 'fixed';
-            nav.style.top = '-50px'; // Keeps a small visible edge
-        }
+        nav.style.position = 'fixed';
+        nav.style.top = '-50px'; // Keeps a small visible edge
     }
 });
 
