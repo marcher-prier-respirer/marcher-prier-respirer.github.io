@@ -106,8 +106,8 @@ main ul li ul {
 main ul li ul li {
     background-color: transparent;
     border: none;
-    padding: 0.5rem 0;
-    margin-bottom: 8px;
+    padding: 0;
+    margin-bottom: 0.5rem;
 }
 
 main ul li ul li p:last-of-type {
