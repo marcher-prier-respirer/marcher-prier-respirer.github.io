@@ -15,9 +15,7 @@ window.addEventListener('scroll', () => {
     lastScrollPosition = currentScrollPosition;
 });
 
-/*
 nav.addEventListener('mouseover', () => {
     // Show the menu when hovering near the top
     nav.style.top = '0';
 });
-*/
