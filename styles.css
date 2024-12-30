@@ -30,7 +30,7 @@ header p {
 /* Navigation */
 nav {
     position: fixed;
-    top: 172px; /* Set the menu below the header */
+    /* top: 172px;  /* Set the menu below the header */
     left: 0;
     right: 0;
     height: 50px;
