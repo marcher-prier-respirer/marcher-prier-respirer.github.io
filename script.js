@@ -26,7 +26,7 @@ nav.addEventListener('mouseover', () => {
 nav.addEventListener('mouseout', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > 172) {
+    if (currentScrollPosition > header.offsetHeight) {
         // Hide part of the menu again if scrolled down
         nav.style.top = '-50px'; // Ensure it returns to the partially hidden state
     }
