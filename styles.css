@@ -31,7 +31,7 @@ header p {
 /* Navigation */
 nav {
     position: relative;
-    top: 0;
+    top: 172px; /* Set the menu below the header */
     left: 0;
     right: 0;
     height: 50px;
@@ -64,6 +64,7 @@ nav a:hover {
 /* Main Content */
 main {
     padding: 2rem;
+    margin-top: 222px; /* Header (172px) + Nav (50px) */
 }
 
 main h2 {
