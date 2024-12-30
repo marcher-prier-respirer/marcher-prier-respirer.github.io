@@ -21,22 +21,24 @@ window.addEventListener('scroll', () => {
     lastScrollPosition = currentScrollPosition;
 });
 
+
+// Mouseover event to show the menu
 nav.addEventListener('mouseover', () => {
     const currentScrollPosition = window.pageYOffset;
     
     if (currentScrollPosition > headerHeight) {
-        // Allow sticky menu behavior only when scrolled past the header
-        nav.style.position = 'fixed';
         // Show the menu when hovering near the top
         nav.style.top = '0';
+    }
 });
 
+
+// Mouseout event to partially hide the menu again
 nav.addEventListener('mouseout', () => {
     const currentScrollPosition = window.pageYOffset;
 
     if (currentScrollPosition > headerHeight) {
         // Hide part of the menu again if scrolled down
-        nav.style.position = 'fixed';
         nav.style.top = '-50px'; // Ensure it returns to the partially hidden state
     } else {
         // Return the menu to its default position below the header
