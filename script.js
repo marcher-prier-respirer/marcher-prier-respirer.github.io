@@ -4,7 +4,7 @@ const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 172) {
         // Scrolling down - hide the menu
         nav.style.top = '-50px'; // Keeps a small visible edge
     } else {
