@@ -96,6 +96,14 @@ main ul li ul li {
     padding: 0.5rem 0;
 }
 
+.event-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
 /* Footer */
 footer {
     background-color: #333;
