@@ -12,6 +12,7 @@ body {
 header {
     background-image: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
+    height: 172px; /* effort to make header background larger*/
     text-align: center;
     padding: 2rem 0;
     padding-bottom: 20px; /* Adds space below the header */
