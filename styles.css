@@ -110,9 +110,12 @@ main ul li ul li {
     margin-bottom: 0.5rem;
 }
 
+main ul li ul li p {
+    margin-bottom: 0.5rem;
+}
+
 main ul li ul li p:last-of-type {
     margin-bottom: 0;
-    
 }
 
 .event-title {
