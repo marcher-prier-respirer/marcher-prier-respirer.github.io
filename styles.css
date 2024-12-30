@@ -29,8 +29,15 @@ header p {
 
 /* Navigation */
 nav {
+    position: fixed;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50px;
     background-color: #4CAF50;
     text-align: center;
+    transition: top 0.3s ease;
+    z-index: 1000;
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -41,11 +48,16 @@ nav a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
+    line-height: 50px;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: #e0e0e0;
+}
+
+body:hover nav {
+    top: -50px;
 }
 
 /* Main Content */
