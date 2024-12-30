@@ -22,15 +22,26 @@ window.addEventListener('scroll', () => {
 });
 
 nav.addEventListener('mouseover', () => {
-    // Show the menu when hovering near the top
-    nav.style.top = '0';
+    const currentScrollPosition = window.pageYOffset;
+    
+    if (currentScrollPosition > headerHeight) {
+        // Allow sticky menu behavior only when scrolled past the header
+        nav.style.position = 'fixed';
+        // Show the menu when hovering near the top
+        nav.style.top = '0';
 });
 
 nav.addEventListener('mouseout', () => {
     const currentScrollPosition = window.pageYOffset;
 
-    if (currentScrollPosition > header.offsetHeight) {
+    if (currentScrollPosition > headerHeight) {
         // Hide part of the menu again if scrolled down
+        nav.style.position = 'fixed';
         nav.style.top = '-50px'; // Ensure it returns to the partially hidden state
+    } else {
+        // Return the menu to its default position below the header
+        nav.style.position = 'absolute';
+        nav.style.top = `${headerHeight}px`;
     }
+    
 });
