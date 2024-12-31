@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
 
     if (currentScrollPosition <= headerHeight) {
         // Scroll within the header: position the nav menu below the header
-        nav.style.position = 'absolute';
+        nav.style.position = 'fixed';
         nav.style.top = `${currentScrollPosition - headerHeight}px`; // Adjust dynamically to header height
     } else {
         // Scroll past the header: make the menu stick to the top & hide it
