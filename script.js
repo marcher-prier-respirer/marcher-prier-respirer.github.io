@@ -42,5 +42,12 @@ nav.addEventListener('mouseout', () => {
         nav.style.position = 'absolute';
         nav.style.top = `${headerHeight}px`;
     }
-    
+});
+
+// When click on h3 title toggle visibility
+document.querySelectorAll('.event-title').forEach(title => {
+    title.addEventListener('click', () => {
+        const details = title.nextElementSibling;
+        details.classList.toggle('visible');
+    });
 });
