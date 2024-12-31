@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcher Prier Respirer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Marcher Prier Respirer</h1>
+            <h1>
+                <!-- the SVG font family does not apply yet, despite CSS and HTML explicit notation. Search for solution. Currently it uses Arial I think.-->
+                <svg width="600" height="90" viewBox="0 0 500 90">
+                    <path id="simpleCurve" d="M0,90 A400,300 0 0,1 500,90" fill="transparent" />
+                    <text text-anchor="middle" font-size="24" font-family="'Open Sans', sans-serif" fill="black">
+                        <textPath href="#simpleCurve" startOffset="50%">Marcher - Prier - Respirer</textPath>
+                    </text>
+                </svg>
+            </h1>
             <p>En forêt de Soignes</p>
         </header>
         <nav>
@@ -23,6 +33,7 @@
                 <p>Nous organisons des marches d'environ 15 km. Un texte sera proposé à la méditation silencieuse du matin, contemplation de la nature et des charmes de chaque saison, invitation à se déposer dans la prière pour entrer dans un cœur à cœur.
                     Place aux échanges dès le midi et pour la suite de la rando.  Un partage clôture la marche, suivi d’un goûter convivial, spécial marcheurs.</p>
                 <p>Animation : Caroline Mandin et Béatrice Petit</p>
+                <img src="./img/11mai_5.jpg" alt="Forest de Soignes au printemps">
             </section>
             <section id="events">
                 <h2>Prochains Evénements</h2>

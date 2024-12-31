@@ -1,4 +1,7 @@
-/* Reset and Base Styles */
+
+/* ===========================================
+   Reset and Base Styles
+   =========================================== */
 
 /* Apply a CSS reset to eliminate browser inconsistencies */
 * {
@@ -8,12 +11,18 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Open Sans','Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #f8efe6; /* Light autumn beige */
+    color: #5a3d31; /* Warm brown for text */
     line-height: 1.6;
+
+    background-image: url('./img/foret-de-soignes_Frederic_Demeuse.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
 }
 
 .container {
@@ -35,33 +44,94 @@ header, nav, main, footer {
 
 
 
-/* Header */
+/* ===========================================
+   Header
+   =========================================== */
+
 header {
-    background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    border: 1px solid #e08663; /* Delicate border */
+
+    height: 150px; /* Match SVG height */
+    background: radial-gradient(circle, #ffd700, #f4a261, #d97a54);
+
+
     color: white;
     text-align: center;
-    padding: 2rem 0;
+    padding: 0.7rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
+
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
+    text-align: center;
+    animation: breathing 15s ease-in-out infinite; /* Breathing effect */
+}
+
+header h1 svg text {
+    fill: currentColor; /* Inherit h1 text color */
+    font-family: 'Open Sans', sans-serif; /* Updated font */
+}
+
+
+@keyframes breathing {
+    0% {
+        letter-spacing: normal; /* Normal spacing */
+        font-size: 2.9rem; /* Normal size */
+        color: white;
+        text-shadow: 0 0 3px #3c2600, 0 0 2px #ffaa00;
+    }
+    42% {
+        letter-spacing: 0.15em; /* Slightly larger spacing */
+        font-size: 3rem; /* Slightly larger text size */
+        color: #fbff06;
+        text-shadow: 0 0 4px #3d2700, 0 0 5px #f5f85a;
+    }
+    65% {
+        letter-spacing: 0.155em; /* Maintain larger spacing */
+        font-size: 3.15rem; /* Hold larger size */
+        color: #fff426;
+        text-shadow: 0 0 5px #2f1e00, 0 0 10px #f8fb59;
+
+    }
+    99% {
+        letter-spacing: 0.10; /* Return to normal spacing */
+        font-size: 3rem; /* Return to normal size */
+        color: #fbfce7;
+        text-shadow: 0 0 3px #472c00, 0 0 4px #ffaa00;
+
+    }
+    100% {
+        letter-spacing: normal; /* Normal spacing during rest */
+        font-size: 2.9rem; /* Normal size during rest */
+        color: white;
+        text-shadow: 0 0 3px #923d00, 0 0 2px #ffaa00;
+    }
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the element horizontally */
+    text-shadow: 0 0 5px #321f00, 0 0 2px #f8fb59;
 }
 
-/* Navigation */
+/* ===========================================
+   Navigation
+   =========================================== */
 nav {
+    background-color: #4b2b20; /* Darker brown */
+    border: 1px solid #e08663; /* Lighter delicate border */
+    border-top: none; /* No border on top */
+    border-radius: 0 0 15px 15px;
     position: fixed;
     /* top: 172px;  Set the menu below the header */
     left: 0;
     right: 0;
     height: 82px;
-    background-color: #4CAF50;
     text-align: center;
     transition: top 0s ease;
     z-index: 1000;
@@ -85,7 +155,7 @@ nav:hover {
 
 
 nav a {
-    color: white;
+    color: #f8efe6; /* Light beige for links */
     margin: 0 1rem;
     text-decoration: none;
     font-size: 1rem;
@@ -95,22 +165,38 @@ nav a {
 }
 
 nav a:hover {
-    color: #e0e0e0;
+    color: #d97a54; /* Soft orange on hover */
 }
 
 
+/* ===========================================
+   Main Content
+   =========================================== */
 
-/* Main Content */
 main {
     width: 100%;
     padding: 2rem;
-    margin-top: 142px; /* free space between nav and main (60px) + Nav (82px)*/
+    margin-top: 7rem; /* free space between nav and main (60px) + Nav (82px)*/
+    margin-left: auto; /* Center the main */
+    margin-right: auto; /* Center the main */
+
+    background-color: rgba(244, 229, 201, 0.6); /* Light background with 60% transparency */
+    border: 5px solid rgba(244, 229, 201, 0.2); /* 20% transparent border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    max-width: 1000px; /* Restrict width */
+
 }
 
 main h2 {
-    color: #4CAF50;
+    color: #a85832; /* Deep orange for section headers */
     font-size: 2rem;
     margin-bottom: 1rem;
+}
+
+main h3 {
+    color: #854a2e; /* Warm cinnamon brown */
+    font-size: 1.5rem; /* Slightly smaller than h2 */
+    margin-bottom: 0.5rem;
 }
 
 main section {
@@ -118,6 +204,7 @@ main section {
     padding: 1rem;
     border-radius: 8px;
     background-color: #fff;
+    border-left: 4px solid #d97a54; /* Autumn orange accents */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -134,21 +221,17 @@ main ul ul.visible {
     display: block; /* Display sublists when visible */
 }
 
-.event-title {
-    cursor: pointer; /* Indicate clickable titles */
-}
-
 main ul li {
     margin-bottom: 1rem;
     padding: 1rem;
-    background-color: #f4f4f4;
-    border-left: 4px solid #4CAF50;
+    background-color: #f8efe6; /* Soft beige for list items */
+    border-left: 4px solid #f4a261; /* Warm autumn tone */
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 main ul li:hover {
-    background-color: #e8f5e9;
+    background-color: #ffe6d5; /* Slightly lighter beige on hover */
 }
 
 main ul li ul {
@@ -172,20 +255,60 @@ main ul li ul li p:last-of-type {
 }
 
 .event-title {
+    cursor: pointer; /* Indicate clickable titles */
     text-align: center;
     font-size: 1.5rem;
-    color: #4CAF50;
     font-weight: bold;
     margin-bottom: 1rem;
+    
 }
 
-/* Footer */
+/* ===========================================
+   Anchor about
+   =========================================== */
+
+#about img {
+    display: block;
+    max-width: 100%; /* Ensures the image fits within the section */
+    height: auto; /* Maintains the aspect ratio */
+    margin: 20px auto; /* Adds space and centers the image */
+    border-radius: 8px; /* Optional: Rounds the corners of the image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+/* ===========================================
+   Anchor events
+   =========================================== */
+
+
+
+
+   /* ===========================================
+   Anchor contact
+   =========================================== */
+
+
+
+
+
+
+
+/* ===========================================
+   Footer
+   =========================================== */
+
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #4b2b20; /* Darker brown */
+    border: 2px solid #a85832; /* Lighter delicate border */
+    border-bottom: none; /* No border on top */
+    border-radius: 15px 15px 0 0;
+    
+
+    background-color: #5a3d31; /* Warm brown for footer */
+    color: #f8efe6; /* Light beige for footer text */
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 0.9rem;
 }
 
