@@ -269,6 +269,11 @@ main ul li ul li p:last-of-type {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
 
+#about p {
+    margin-bottom: 15px;
+}
+
+
 /* ===========================================
    Anchor events
    =========================================== */
