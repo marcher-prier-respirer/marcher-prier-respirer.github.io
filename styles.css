@@ -1,4 +1,12 @@
 /* Reset and Base Styles */
+
+/* Apply a CSS reset to eliminate browser inconsistencies */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -13,7 +21,7 @@ body {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 0 15px; /* Optional padding for better readability on smaller screens */
+    padding: 0; /* Optional padding for better readability on smaller screens */
     box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
@@ -21,12 +29,11 @@ header, nav, main, footer {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 0 2rem; /*Keep padding for readability */
+    padding: 0; /*Keep padding for readability */
+    box-sizing: border-box;
 }
 
-header, main, footer {
-    box-sizing: border-box; /* Ensures padding is included in the width */
-}
+
 
 /* Header */
 header {
@@ -49,20 +56,33 @@ header p {
 
 /* Navigation */
 nav {
-    /* position: relative; */
+    position: relative;
     /* top: 172px;  Set the menu below the header */
     left: 0;
     right: 0;
-    height: 50px;
+    height: 82px;
     background-color: #4CAF50;
     text-align: center;
-    transition: top 0.15s ease;
+    transition: top 0s ease;
     z-index: 1000;
-    padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 0;
     line-height: 50px; /* Vertically centers the text */
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem 0; /* Consistent padding */
 }
+
+nav:hover {
+    /* Ensure hover doesn't change layout-critical properties */
+    width: 100%; /* Prevent width changes on hover */
+    max-width: 1024px;
+    padding: 1rem 0; /* Keep consistent padding */
+    /* transition: top 0.3s ease; */
+}
+
+
 
 nav a {
     color: white;
