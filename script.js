@@ -1,8 +1,10 @@
 const nav = document.querySelector('nav');
 const header = document.querySelector('header');
+const navLinks = document.querySelectorAll('nav a');
 
 // Get the height of the header
 const headerHeight = header.offsetHeight;
+const navHeight = nav.offsetHeight;
 
 window.addEventListener('scroll', () => {
     const currentScrollPosition = window.pageYOffset;
@@ -11,14 +13,16 @@ window.addEventListener('scroll', () => {
     nav.style.maxWidth = '1024px'; // Limit width to match the design
     nav.style.margin = '0 auto'; // Center the nav
 
-    if (currentScrollPosition <= headerHeight) {
+    if (currentScrollPosition < headerHeight) {
         // Scroll within the header: position the nav menu below the header
         nav.style.position = 'fixed';
         nav.style.top = `${headerHeight - currentScrollPosition}px`; // Adjust dynamically to header height
+        nav.style.transition = 'none';
     } else {
         // Scroll past the header: make the menu stick to the top & hide it
         nav.style.position = 'fixed';
         nav.style.top = '-25px'; // Keeps a small visible edge
+        nav.style.transition = 'top 0.3s ease';
 
     }
 });
@@ -44,10 +48,6 @@ nav.addEventListener('mouseout', () => {
     if (currentScrollPosition > headerHeight) {
         // Hide part of the menu again if scrolled down
         nav.style.top = '-25px'; // Ensure it returns to the partially hidden state
-    } else {
-        // Return the menu to its default position below the header
-        nav.style.position = 'absolute';
-        nav.style.top = `${headerHeight}px`;
     }
 });
 
@@ -62,6 +62,28 @@ document.querySelectorAll('#events ul > li').forEach(item => {
         const details = item.querySelector('ul');
         if (details) {
             details.classList.toggle('visible');
+        }
+    });
+});
+
+// Add a click event listener to each link
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        // Get the target anchor
+        const targetId = link.getAttribute('href').substring(1); // Remove the '#' from the href
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // Calculate the target position 82px higher than the anchor
+            const targetPosition = targetElement.offsetTop - navHeight;
+
+            // Scroll to the calculated position smoothly
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
         }
     });
 });
