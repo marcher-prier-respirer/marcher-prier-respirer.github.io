@@ -2,7 +2,7 @@ const nav = document.querySelector('nav');
 const header = document.querySelector('header');
 const navLinks = document.querySelectorAll('nav a');
 
-// Get the height of the header
+// Get the height of the header and of the nav
 const headerHeight = header.offsetHeight;
 const navHeight = nav.offsetHeight;
 
@@ -66,7 +66,7 @@ document.querySelectorAll('#events ul > li').forEach(item => {
     });
 });
 
-// Add a click event listener to each link
+// Add a click event listener to each link where smooth transitions happen when clicking on the nav links, and viewing the anchors with the title visible
 navLinks.forEach(link => {
     link.addEventListener('click', (event) => {
         event.preventDefault(); // Prevent default anchor behavior
@@ -76,7 +76,7 @@ navLinks.forEach(link => {
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            // Calculate the target position 82px higher than the anchor
+            // Calculate the target position higher than the anchor with the height of the nav menu height, because in this website the nav is constantly visible while scrolling, and otherwise Anchor titles are hidden 
             const targetPosition = targetElement.offsetTop - navHeight;
 
             // Scroll to the calculated position smoothly
