@@ -56,7 +56,7 @@ nav.addEventListener('transitionend', (event) => {
     nav.style.transition = 'top 0s ease'; // Smooth transition
 });
 
-// When click on h3 title toggle visibility
+/* // When click on h3 title toggle visibility
 document.querySelectorAll('#events ul > li').forEach(item => {
     item.addEventListener('click', () => {
         const details = item.querySelector('ul');
@@ -65,6 +65,24 @@ document.querySelectorAll('#events ul > li').forEach(item => {
         }
     });
 });
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const eventTitles = document.querySelectorAll('.event-title');
+
+    eventTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            const eventDiv = title.nextElementSibling;
+
+            if (eventDiv.style.display === 'none' || eventDiv.style.display === '') {
+                eventDiv.style.display = 'block';
+            } else {
+                eventDiv.style.display = 'none';
+            }
+        });
+    });
+});
+
 
 // Add a click event listener to each link where smooth transitions happen when clicking on the nav links, and viewing the anchors with the title visible
 navLinks.forEach(link => {

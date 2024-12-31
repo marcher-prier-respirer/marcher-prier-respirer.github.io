@@ -213,13 +213,6 @@ main ul {
     padding: 0;
 }
 
-main ul ul {
-    display: none; /* Hide sublists by default */
-}
-
-main ul ul.visible {
-    display: block; /* Display sublists when visible */
-}
 
 main ul li {
     margin-bottom: 1rem;
@@ -279,8 +272,54 @@ main ul li ul li p:last-of-type {
 /* ===========================================
    Anchor events
    =========================================== */
+/* Selecteert het div.event van het eerste child van "events ul li". Dat eerste child is wat onder li valt, en dan selecteer je de div dieonderdeel is van de child. */
+#events ul li:first-child div.event {
+    display: block; /* Dit zorgt ervoor dat het eerste evenement opengeklapt wordt. */
+}
 
+#events .event {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    /* IF BORDER WANTED:
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background: #f9f9f918;
+    */
+}
+#events .event-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+#events .event ul {
+    list-style: none;
+    padding: 0;
+}
+#events .event li {
+    display: flex;
+    flex-wrap: wrap; /* Allows second <p> to move below */
+    margin-bottom: 15px;
+}
+#events .event strong {
+    width: 140px;
+    flex-shrink: 0;
+}
+#events .event li p {
+    margin: 0;
+}
 
+#events .event li p:not(:first-of-type) {
+    margin-left: 140px; /* Align subsequent <p> under <strong> */
+}
+
+#events .event a {
+    color: #007BFF;
+    text-decoration: none;
+}
+.event a:hover {
+    text-decoration: underline;
+}
 
 
    /* ===========================================
