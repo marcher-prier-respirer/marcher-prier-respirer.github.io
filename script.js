@@ -9,8 +9,8 @@ window.addEventListener('scroll', () => {
 
     if (currentScrollPosition <= headerHeight) {
         // Scroll within the header: position the nav menu below the header
-        nav.style.position = 'absolute';
-        nav.style.top = `${headerHeight}px`; // Adjust dynamically to header height
+        nav.style.position = 'fixed';
+        nav.style.top = `${headerHeight - currentScrollPosition}px`; // Adjust dynamically to header height
     } else {
         // Scroll past the header: make the menu stick to the top & hide it
         nav.style.position = 'fixed';
@@ -45,9 +45,11 @@ nav.addEventListener('mouseout', () => {
 });
 
 // When click on h3 title toggle visibility
-document.querySelectorAll('.event-title').forEach(title => {
-    title.addEventListener('click', () => {
-        const details = title.nextElementSibling;
-        details.classList.toggle('visible');
+document.querySelectorAll('#events ul > li').forEach(item => {
+    item.addEventListener('click', () => {
+        const details = item.querySelector('ul');
+        if (details) {
+            details.classList.toggle('visible');
+        }
     });
 });

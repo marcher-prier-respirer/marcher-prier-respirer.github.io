@@ -8,6 +8,26 @@ body {
     line-height: 1.6;
 }
 
+.container {
+    /* border: 2px solid red; */
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 15px; /* Optional padding for better readability on smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+header, nav, main, footer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 2rem; /*Keep padding for readability */
+}
+
+header, main, footer {
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
 /* Header */
 header {
     background-image: linear-gradient(to right, #6a11cb, #2575fc);
@@ -29,14 +49,14 @@ header p {
 
 /* Navigation */
 nav {
-    position: absolute;
-    top: 172px;  /* Set the menu below the header */
+    /* position: relative; */
+    /* top: 172px;  Set the menu below the header */
     left: 0;
     right: 0;
     height: 50px;
     background-color: #4CAF50;
     text-align: center;
-    transition: top 0.3s ease;
+    transition: top 0.15s ease;
     z-index: 1000;
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -62,8 +82,9 @@ nav a:hover {
 
 /* Main Content */
 main {
+    width: 100%;
     padding: 2rem;
-    /* margin-top: 222px; /* Header (172px) + Nav (50px) */
+    margin-top: 60px; /* Header (172px) + Nav (50px)*/
 }
 
 main h2 {
@@ -91,6 +112,10 @@ main ul ul {
 
 main ul ul.visible {
     display: block; /* Display sublists when visible */
+}
+
+.event-title {
+    cursor: pointer; /* Indicate clickable titles */
 }
 
 main ul li {
