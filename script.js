@@ -56,17 +56,7 @@ nav.addEventListener('transitionend', (event) => {
     nav.style.transition = 'top 0s ease'; // Smooth transition
 });
 
-/* // When click on h3 title toggle visibility
-document.querySelectorAll('#events ul > li').forEach(item => {
-    item.addEventListener('click', () => {
-        const details = item.querySelector('ul');
-        if (details) {
-            details.classList.toggle('visible');
-        }
-    });
-});
- */
-
+// When click on h3 title toggle visibility
 document.addEventListener('DOMContentLoaded', () => {
     const eventTitles = document.querySelectorAll('.event-title');
 
