@@ -85,11 +85,11 @@ main ul {
     padding: 0;
 }
 
-ul ul {
+main ul ul {
     display: none; /* Hide sublists by default */
 }
 
-ul ul.visible {
+main ul ul.visible {
     display: block; /* Display sublists when visible */
 }
 
