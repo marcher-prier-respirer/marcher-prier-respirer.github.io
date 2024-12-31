@@ -29,7 +29,7 @@ header p {
 
 /* Navigation */
 nav {
-    /* position: fixed; */
+    position: relative;
     /* top: 172px;  /* Set the menu below the header */
     left: 0;
     right: 0;
