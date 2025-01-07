@@ -32,8 +32,6 @@ body {
     margin: 0 auto;
     padding: 0; /* Optional padding for better readability on smaller screens */
     box-sizing: border-box; /* Ensure padding is included in the width */
-    display: flex;
-    flex-direction: column; /* Stack elements on smaller screens */
 }
 
 header, nav, main, footer {
@@ -399,42 +397,3 @@ footer p:last-of-type {
 
 }
 
-
-/* ===========================================
-   Settings for Different Screen Sizes
-   =========================================== */
-
-   @media screen and (max-width: 768px) {
-    .container {
-        padding: 0 1rem; /* Add padding for smaller screens */
-    }
-
-    header {
-        height: auto; /* Adjust header height */
-        padding: 1rem 0;
-    }
-
-    nav {
-        height: auto; /* Allow nav to expand if needed */
-        line-height: normal; /* Adjust vertical alignment */
-        flex-wrap: wrap; /* Stack nav links */
-    }
-
-    nav a {
-        display: block;
-        margin: 0.5rem 0; /* Separate links vertically */
-    }
-
-    main {
-        margin-top: 1rem; /* Reduce space above content */
-    }
-
-    footer {
-        display: block; /* Stack footer content */
-        text-align: center;
-    }
-
-    img {
-        max-width: 100%;
-    }
-}
