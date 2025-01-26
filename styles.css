@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Open Sans','Arial', sans-serif;
+    font-size: 16px; /* responsive */
     margin: 0;
     padding: 0;
     background-color: #f8efe6; /* Light autumn beige */
@@ -111,7 +112,7 @@ header h1 svg text {
 }
 
 header p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     position: absolute;
     top: 85px;
     left: 50%;
@@ -158,7 +159,7 @@ nav a {
     color: #f8efe6; /* Light beige for links */
     margin: 0 1rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     line-height: 50px;
     transition: color 0.3s ease;
@@ -175,7 +176,7 @@ nav a:hover {
 
 main {
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 0;
     margin-top: 7rem; /* free space between nav and main (60px) + Nav (82px)*/
     margin-left: auto; /* Center the main */
     margin-right: auto; /* Center the main */
@@ -262,7 +263,7 @@ main ul li ul li p:last-of-type {
 
 #about img {
     display: block;
-    max-width: 100%; /* Ensures the image fits within the section */
+    max-width: 60%; /* Ensures the image fits within the section */
     height: auto; /* Maintains the aspect ratio */
     margin: 20px auto; /* Adds space and centers the image */
     border-radius: 8px; /* Optional: Rounds the corners of the image */
@@ -282,6 +283,10 @@ main ul li ul li p:last-of-type {
     display: block; /* Dit zorgt ervoor dat het eerste evenement opengeklapt wordt. */
 }
 
+#events {
+    padding: 1rem 0.4rem;
+}
+
 #events .event {
     display: none;
     max-width: 900px;
@@ -294,7 +299,7 @@ main ul li ul li p:last-of-type {
     */
 }
 #events .event-title {
-    font-size: 1.5em;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 #events .event ul {
@@ -302,20 +307,19 @@ main ul li ul li p:last-of-type {
     padding: 0;
 }
 #events .event li {
-    display: flex;
+    display: block;
     flex-wrap: wrap; /* Allows second <p> to move below */
     margin-bottom: 15px;
 }
 #events .event strong {
-    width: 140px;
-    flex-shrink: 0;
+    width: 0px;
 }
 #events .event li p {
     margin: 0;
 }
 
 #events .event li p:not(:first-of-type) {
-    margin-left: 140px; /* Align subsequent <p> under <strong> */
+    margin-left: 0px; /* Align subsequent <p> under <strong> */
 }
 
 #events .event a {
@@ -348,7 +352,7 @@ footer {
     border: 2px solid #a85832; /* Lighter delicate border */
     border-bottom: none; /* No border on top */
     border-radius: 15px 15px 0 0;
-    height: 380px;
+    height: 100%;
 
 
     color: #f8efe6; /* Light beige for footer text */
@@ -357,7 +361,7 @@ footer {
     margin-top: 1rem;
     font-size: 0.9rem;
 
-    display: flex;
+    display: block;
     flex-wrap: wrap;
 }
 
@@ -366,7 +370,7 @@ footer a img {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Creates a soft shadow */
     border: 2px solid #fee8c4b4; /* Adds a fluffy border */
     width: 100%; /* Scales the image to 100% of the container width */
-    max-width: 250px; /* Restricts the image to a maximum width */
+    max-width: 200px; /* Restricts the image to a maximum width */
     height: auto; /* Maintains the aspect ratio */
     transition: all 0.4s ease; /* Smooth transition */
     margin-right: 2rem;
@@ -383,9 +387,9 @@ footer a img:hover {
 footer p:first-child {
     color: #ffffff;
     font-size: 1.4rem;
-    margin: 70px auto 20px auto;
+    margin: 10px auto 10px auto;
     border-radius: 8px;
-    max-width: auto;
+    max-width: 100%;
     padding: 20px;
 
 }
@@ -393,7 +397,113 @@ footer p:first-child {
 footer p:last-of-type {
     color: inherit;
     font-size: inherit;
-    margin: 75px auto 25px auto;
+    margin: 10px auto 20px auto;
 
 }
 
+@media (min-width: 400px) {
+    header h1 svg {
+        max-width: 400px;
+    }
+
+    header h1 text {
+        font-size: 22px;
+        font-family: "'Open Sans', sans-serif";
+    }
+    
+    header p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 500px) {
+    nav a {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (min-width: 600px) {
+    body {
+        font-size: 16px;
+    }    
+
+    header h1 svg {
+        max-width: 600px;
+    }
+
+    header h1 text {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    #events {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 850px) {
+    #about img {
+        max-width: 100%; /* Ensures the image fits within the section */
+    }
+}
+
+@media (min-width: 1024px) {
+
+    #events .event-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    #events .event li {
+        display: flex;
+        flex-wrap: wrap; /* Allows second <p> to move below */
+        margin-bottom: 15px;
+    }
+    #events .event strong {
+        width: 140px;
+        flex-shrink: 0;
+    }
+    #events .event li p {
+        margin: 0;
+    }
+
+    #events .event li p:not(:first-of-type) {
+        margin-left: 140px; /* Align subsequent <p> under <strong> */
+    }
+
+    footer {
+        height: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer a img {
+        max-width: 250px; /* Restricts the image to a maximum width */
+        margin-right: 2rem;
+        margin-top: 2rem;
+    
+    }
+
+    footer p:first-child {
+        margin: 70px auto 20px auto;
+    }
+    
+    footer p:last-of-type {
+        margin: 75px auto 25px auto;
+    }
+}
