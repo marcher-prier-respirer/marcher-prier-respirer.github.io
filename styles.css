@@ -169,6 +169,9 @@ nav a:hover {
     color: #d97a54; /* Soft orange on hover */
 }
 
+#nav_events {
+    white-space: pre-line;
+}
 
 /* ===========================================
    Main Content
@@ -393,6 +396,7 @@ footer p:first-child {
     padding: 20px;
 
 }
+
 
 footer p:last-of-type {
     color: inherit;
